@@ -28,7 +28,7 @@ export class AppService implements OnModuleInit {
     const genres = await this.genreService.seedGenreFromTMDB();
     const genreLinkedList = this.genreService.extractGenreLinkedList(genres);
 
-    await this.movieService.seedMoviesFromTMDB(genreLinkedList);
+    await this.movieService.seedMoviesFromTMDB(genreLinkedList, 2);
 
     this.logger.log('Database seeding completed..');
   }
